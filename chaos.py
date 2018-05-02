@@ -14,7 +14,8 @@ from kubernetes.client.rest import ApiException
 
 LOGGER = logging.getLogger(__name__)
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s %(levelname)s %(message)s')
 
 KILL_INTERVAL = float(os.environ.get('CHAOS_PONY_INTERVAL_SECONDS', 300))
 NUM_KILLS = float(os.environ.get('CHAOS_PONY_KILLS_PER_INTERVAL', 2))
